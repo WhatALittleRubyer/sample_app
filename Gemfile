@@ -19,7 +19,7 @@ gem 'sqlite3'
 
 # Bundle the extra gems:
 # gem 'bj'
-# gem 'nokogiri'
+gem 'nokogiri', "1.4.4"
 gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
@@ -31,11 +31,12 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # end
 
 group :development do
-  gem 'rspec-rails', '2.5.0'
+  gem 'rspec-rails', ">= 2.5.0"
 end
 
 group :test do
-  gem 'rspec', '2.5.0'
-  gem 'webrat', '0.7.1'
+  gem 'rspec', ">= 2.5.0"
+  gem 'webrat'
+  gem 'spork'
 end
 
