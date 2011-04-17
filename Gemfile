@@ -30,13 +30,16 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 #   gem 'webrat'
 # end
 
+
 group :development do
   gem 'rspec-rails', ">= 2.5.0"
   gem 'annotate-models', '>= 1.0.4'
+  gem "fuubar"
 end
 
 group :test do
   gem 'rspec', ">= 2.5.0"
+  gem "fuubar"
   gem 'webrat'
   gem 'spork'
 end
