@@ -42,5 +42,7 @@ group :test do
   gem "fuubar"
   gem 'webrat'
   gem 'spork'
+  gem 'factory_girl_rails', '>= 1.0'
+
 end
 
