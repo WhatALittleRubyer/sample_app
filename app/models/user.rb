@@ -1,3 +1,5 @@
+require "digest"
+
 # == Schema Information
 # Schema version: 20110417230516
 #
@@ -37,13 +39,21 @@ class User < ActiveRecord::Base
 
 
   private
-    
     def encrypt_password
+      self.salt = make_salt if new_record?
       self.encrypted_password = encrypt(password)
     end
 
     def encrypt(string)
-      string # temporary implementation!
+      secure_hash("#{salt}--#{string}")
     end
 
+    def make_salt
+      secure_hash("#{Time.now.utc}--#{password}")
+    end
+
+    def secure_hash(string)
+      Digest::SHA2.hexdigest(string)
+    end
+  #end private
 end
