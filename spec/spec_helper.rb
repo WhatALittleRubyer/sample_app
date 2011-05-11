@@ -33,7 +33,7 @@ Spork.prefork do
     config.use_transactional_fixtures = true
 
     # Needed for Spork
-    ActiveSupport::Dependencies.clear
+#    ActiveSupport::Dependencies.clear
 
     def test_sign_in(user)
       controller.sign_in(user)
@@ -56,7 +56,7 @@ Spork.prefork do
 end
 
 Spork.each_run do
-  load "#{Rails.root}/config/routes.rb"
-  Dir["#{Rails.root}/app/**/*.rb"].each { |f| load f } 
+#  load "#{Rails.root}/config/routes.rb"
+#  Dir["#{Rails.root}/app/**/*.rb"].each { |f| load f } 
 end
 
