@@ -1,7 +1,5 @@
-require "digest"
-
 # == Schema Information
-# Schema version: 20110417230516
+# Schema version: 20110513232809
 #
 # Table name: users
 #
@@ -11,7 +9,11 @@ require "digest"
 #  created_at         :datetime
 #  updated_at         :datetime
 #  encrypted_password :string(255)
+#  salt               :string(255)
+#  admin              :boolean
 #
+
+require "digest"
 
 class User < ActiveRecord::Base
   attr_accessor :password
